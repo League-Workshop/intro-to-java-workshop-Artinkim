@@ -1,22 +1,48 @@
 package section4;
 
+import javax.swing.JOptionPane;
+
 public class QuizGame {
 	
 	public static void main(String[] args) {
 		
-		// 1.  Create a variable to hold the user's score 
+int score = 0;
 		
-		// 2.  Ask the user a question 
+String answer = JOptionPane.showInputDialog("12x6");
 		
-		// 3.  Use an if statement to check if their answer is correct
+	if(answer .equals("72"))
+	{
+	score ++;	
+	}
+	else
+	{
+		score --;		
+	}
+	
+	 answer = JOptionPane.showInputDialog("15 digits of pi");
+	
+	if(answer .equals("3.14159265358979"))
+	{
+	score ++;	
+	}
+	else
+	{
+	score --; 	
+	}
+	
+ answer = JOptionPane.showInputDialog("Are dogs better than cats?");
+	
+	if(answer .equalsIgnoreCase("yes"))
+	{
+	score ++;	
+	}
+	else
+	{
+	score --; 	
+	}	
+	
+	JOptionPane.showMessageDialog(null,(double) score/3*100 +"%");
 		
-		// 4.  if the user's answer is correct
-		
-		// -- add one to their score 
-		
-		// 5.  Create more questions by repeating steps 1, 2, and 3 below. 
-		
-		// 6.  After all the questions have been asked, print the user's score 
-		
+
 	}
 }
