@@ -16,7 +16,7 @@ String answer = JOptionPane.showInputDialog("12x6");
 	}
 	else
 	{
-		score --;		
+	score --;		
 	}
 	
 	 answer = JOptionPane.showInputDialog("15 digits of pi");

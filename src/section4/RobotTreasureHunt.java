@@ -15,6 +15,7 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
+
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
 	
 	private void goUp() throws InterruptedException {
