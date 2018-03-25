@@ -5,6 +5,11 @@ size(600,800);
 int ballY; 
 int ballX = (int) random(400);
 int score;
+int hs;
+int b = 50;
+int radius = 40;
+int c;
+int m;
 
 void draw()
 {
@@ -14,29 +19,38 @@ noStroke();
 ellipse(ballX,ballY,20,20);
 ballY += 1*score+1;
 checkCatch();
-barrier();
+hs();
+drawScore();
 }
+
 
 void checkCatch()
 {
-if(dist(ballX,mouseX,10) && dist(ballY,mouseY,10))
+if(dist(ballX,mouseX,radius) && dist(ballY,mouseY,radius)&& mouseY >=b)
 {
 score ++; 
+c ++;
 ballY = 0;
 ballX = (int) random(400);
 ellipse(ballX,ballY,20,20);
 }
 else if (ballY >= 800 && score > 0)
 {
-  score --;
+score --;
+m ++;
+ballY = 0;
+ballX = (int) random(400);
+ellipse(ballX,ballY,20,20);
+  
 }
-fill(0, 0, 0);
-textSize(16);
-text("Score: " + score, 20, 20);
+
 }
+
 
 void drawFish(){
   background(141,233,237);
+  if(mouseY >=b)
+  {
   noStroke();
   fill(255,255,255);
   ellipse(mouseX-17,mouseY-17,20,20); //back side eye
@@ -56,17 +70,31 @@ void drawFish(){
   fill(141,233,237);
   ellipse(mouseX-45,mouseY,25,25); //mouth
 }
+}
+
 
 public boolean dist(int a, int b, int c) 
 {
     return Math.abs(a - b) < c;
 }
 
-public void barrier()
+
+public void hs()
 {
-if (mouseY <= 100)
+if(score > hs)
 {
-mouseY = 100; 
+hs = score;
 }
 }
+
+public void drawScore()
+{
+fill(0, 0, 0);
+textSize(16);
+text("Score: " + score, 20, 20);
+text("High Score: " + hs, 20, 50);  
+text("Collected: " + c, 20, 100);
+text("Missed: " + m, 20, 150);
+}
+
   
